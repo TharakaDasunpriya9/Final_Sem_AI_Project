@@ -1,0 +1,278 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger Petstore",
+        "version": "1.0.0",
+        "contact": {}
+    },
+    "paths": {
+        "Register": {
+            "post": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ConfirmPassword",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "",
+                "responses": {
+                    "200": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Register"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Register"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "login": {
+            "post": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "",
+                "responses": {
+                    "200": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/login"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "UploadImage": {
+            "post": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "",
+                "responses": {
+                    "200": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadImage"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UploadImage"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "GetUserDetails": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userAge",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userGender",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "",
+                "responses": {
+                    "200": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getUserdetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/getUserdetails"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "HeartDetails": {
+            "post": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "age",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "",
+                "responses": {
+                    "200": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HeartDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/HeartDetails"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [],
+    "servers": [],
+    "components": {
+        "links": {},
+        "callbacks": {},
+        "schemas": {
+            "Register": {
+                "name": "String",
+                "password": "String",
+                "ConfirmPassword": "String"
+            },
+            "login": {
+                "name": "String",
+                "password": "String"
+            },
+            "UploadImage": {
+                "image": "String"
+            },
+            "getUserdetails": {
+                "userID": "String"
+            },
+            "HeartDetails": {
+                "age": "String",
+                "gender": "String"
+            }
+        }
+    }
+}
