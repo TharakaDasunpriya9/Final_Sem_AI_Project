@@ -151,21 +151,86 @@
                 "description": "",
                 "parameters": [
                     {
-                        "name": "userAge",
+                        "name": "gender",
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
                         }
                     },
                     {
-                        "name": "userGender",
+                        "name": "Age",
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "hypertension",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "heart_disease",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "ever_married",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "work_type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Residence_type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "avg_glucose_level",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "bmi",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "smoking_status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
                         }
                     }
+            
                 ],
                 "operationId": "",
                 "responses": {
@@ -198,21 +263,86 @@
                 "description": "",
                 "parameters": [
                     {
-                        "name": "age",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "gender",
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Age",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "hypertension",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "heart_disease",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "ever_married",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "work_type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Residence_type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "avg_glucose_level",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "bmi",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "smoking_status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
                         }
                     }
+            
                 ],
                 "operationId": "",
                 "responses": {
@@ -259,11 +389,29 @@
                 "image": "String"
             },
             "getUserdetails": {
-                "userID": "String"
+                "gender": "String",
+                "Age":"integer",
+                "hypertension":"integer",
+                "heart_disease":"integer",
+                "ever_married":"integer",
+                "work_type":"integer",
+                "Residence_type":"integer",
+                "avg_glucose_level":"float",
+                "bmi":"float",
+                "smoking_status":"integer"
+
             },
             "StrokeDetails": {
-                "age": "String",
-                "gender": "String"
+                "gender": "String",
+                "Age":"integer",
+                "hypertension":"integer",
+                "heart_disease":"integer",
+                "ever_married":"integer",
+                "work_type":"integer",
+                "Residence_type":"integer",
+                "avg_glucose_level":"float",
+                "bmi":"float",
+                "smoking_status":"integer"
             }
         }
     }
