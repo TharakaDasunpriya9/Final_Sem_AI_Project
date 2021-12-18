@@ -151,14 +151,6 @@
                 "description": "",
                 "parameters": [
                     {
-                        "name": "userID",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "userAge",
                         "in": "query",
                         "required": false,
@@ -200,7 +192,7 @@
                 }
             }
         },
-        "HeartDetails": {
+        "StrokeDetails": {
             "post": {
                 "summary": "",
                 "description": "",
@@ -229,7 +221,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HeartDetails"
+                                    "$ref": "#/components/schemas/StrokeDetails"
                                 }
                             }
                         }
@@ -240,7 +232,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/HeartDetails"
+                                "$ref": "#/components/schemas/StrokeDetails"
                             }
                         }
                     }
@@ -269,7 +261,7 @@
             "getUserdetails": {
                 "userID": "String"
             },
-            "HeartDetails": {
+            "StrokeDetails": {
                 "age": "String",
                 "gender": "String"
             }
