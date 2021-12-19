@@ -2,7 +2,7 @@ import cv2
 
 video=cv2.VideoCapture(0)
 
-faceDetect=cv2.CascadeClassifier('D:\Phython Project\Last_Sem_AI_Project\modules\haarcascade_frontalface_default.xml')
+faceDetect=cv2.CascadeClassifier('D:\Phython Project\Last_Sem_AI_Project\models\haarcascade_frontalface_default.xml')
 
 while True:
     ret,frame=video.read()
