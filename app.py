@@ -25,14 +25,14 @@ def result():
     x=np.array([gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,
                 avg_glucose_level,bmi,smoking_status]).reshape(1,-1)
 
-    scaler_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models\scaler.pkl')
+    scaler_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models/stroke_predict/scaler.pkl')
     scaler=None
     with open(scaler_path,'rb') as scaler_file:
         scaler=pickle.load(scaler_file)
 
     x=scaler.transform(x)
 
-    model_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models\dt.sav')
+    model_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models/stroke_predict/dt.sav')
     dt=joblib.load(model_path)
 
     Y_pred=dt.predict(x)
@@ -42,6 +42,7 @@ def result():
         return render_template('nostroke.html')
     else:
         return render_template('stroke.html')
+
 
 if __name__=="__main__":
     app.run(debug=True,port=7394)
