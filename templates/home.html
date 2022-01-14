@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Home</title>
+    <link rel="icon" href="data:,">
 </head>
 
 <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
@@ -136,11 +137,13 @@
                         <br>
                         
                         <br>
-                        <br>
+            
                         <center>
                             <button type="submit" class="btn btn-dark" value="submit">Submit</button>
-                        </center>
+                            <br><br><br><br>
+                            <a href="{{ url_for('age_gender') }}" style="color: antiquewhite;font-size: larger;"> "click me to detect age,gender and face"</a>  
                     
+                        </center>
                 </form>
             </div>
         </div>
@@ -152,7 +155,7 @@
 </body>
 <style>
 body {
-    background-color: #575dda;
+    background-color: #5656dd;
 }
 
 .col-lg-4 {
