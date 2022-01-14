@@ -1,17 +1,18 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,Response
 import joblib
-import os
 import  numpy as np
 import pickle
+from camera import Video
+from subprocess import call
+from age_gender import application
 
-app= Flask(__name__)
-@app.route("/")
+@application.route("/")
 def index():
     return render_template("home.html")
 
-@app.route("/result",methods=['POST','GET'])
+@application.route("/result",methods=['POST','GET'])
 def result():
-    gender=int(request.form['gender'])
+    gender1=int(request.form['gender'])
     age=int(request.form['age'])
     hypertension=int(request.form['hypertension'])
     heart_disease = int(request.form['heart_disease'])
@@ -22,17 +23,17 @@ def result():
     bmi = float(request.form['bmi'])
     smoking_status = int(request.form['smoking_status'])
 
-    x=np.array([gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,
+    x=np.array([gender1,age,hypertension,heart_disease,ever_married,work_type,Residence_type,
                 avg_glucose_level,bmi,smoking_status]).reshape(1,-1)
 
-    scaler_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models/stroke_predict/scaler.pkl')
+    scaler_path=('models/stroke_predict/scaler.pkl')
     scaler=None
     with open(scaler_path,'rb') as scaler_file:
         scaler=pickle.load(scaler_file)
 
     x=scaler.transform(x)
 
-    model_path=os.path.join('D:\Phython Project\Last_Sem_AI_Project','models/stroke_predict/dt.sav')
+    model_path=('models/stroke_predict/dt.sav')
     dt=joblib.load(model_path)
 
     Y_pred=dt.predict(x)
@@ -43,6 +44,7 @@ def result():
     else:
         return render_template('stroke.html')
 
-
 if __name__=="__main__":
-    app.run(debug=True,port=7394)
+ application.run(debug=True)      
+
+    
