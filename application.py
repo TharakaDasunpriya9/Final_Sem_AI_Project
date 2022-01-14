@@ -3,6 +3,7 @@ import joblib
 import  numpy as np
 import pickle
 from camera import Video
+
 from age_gender import application
 
 @application.route("/")
