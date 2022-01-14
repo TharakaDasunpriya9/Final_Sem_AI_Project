@@ -1,7 +1,5 @@
 import cv2
 
-
-# faceDetect=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 def faceBox(faceNet,frame):
     frameHeight=frame.shape[0]
     frameWidth=frame.shape[1]
@@ -51,7 +49,6 @@ class Video(object):
         padding=20
         frame,bboxs=faceBox(faceNet,frame)
         for bbox in bboxs:
-        # face=frame[bbox[1]:bbox[3], bbox[0]:bbox[2]]
             face = frame[max(0,bbox[1]-padding):min(bbox[3]+padding,frame.shape[0]-1),max(0,bbox[0]-padding):min(bbox[2]+padding, frame.shape[1]-1)]
             blob=cv2.dnn.blobFromImage(face, 1.0, (227,227), MODEL_MEAN_VALUES, swapRB=False)
             genderNet.setInput(blob)
@@ -63,7 +60,6 @@ class Video(object):
         age=ageList[agePred[0].argmax()]
 
         label="{},{}".format(gender,age)
-        # cv2.rectangle(frame,(bbox[0], bbox[1]-30), (bbox[2], bbox[1]), (0,255,0),-1) 
         cv2.putText(frame, label, (bbox[0], bbox[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255,255,255), 2,cv2.LINE_AA)
         ret,jpg=cv2.imencode('.jpg',frame)
         return jpg.tobytes()
