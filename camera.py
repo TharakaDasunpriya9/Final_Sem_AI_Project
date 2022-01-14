@@ -21,14 +21,14 @@ def faceBox(faceNet,frame):
             return frame, bboxs
 
 
-faceProto = "opencv_face_detector.pbtxt"
-faceModel = "opencv_face_detector_uint8.pb"
+faceProto = "models/age_gender_face_detect/opencv_face_detector.pbtxt"
+faceModel = "models/age_gender_face_detect/opencv_face_detector_uint8.pb"
 
-ageProto = "age_deploy.prototxt"
-ageModel = "age_net.caffemodel"
+ageProto = "models/age_gender_face_detect/age_deploy.prototxt"
+ageModel = "models/age_gender_face_detect/age_net.caffemodel"
       
-genderProto = "gender_deploy.prototxt"
-genderModel = "gender_net.caffemodel"
+genderProto = "models/age_gender_face_detect/gender_deploy.prototxt"
+genderModel = "models/age_gender_face_detect/gender_net.caffemodel"
 
 
 

@@ -1,30 +1,23 @@
-import cv2 
+from flask import Flask, render_template, Response
+from camera import Video
 
-video=cv2.VideoCapture(0)
+age_gender=Flask(__name__)
 
-faceDetect=cv2.CascadeClassifier('D:\Phython Project\Last_Sem_AI_Project\models\haarcascade_frontalface_default.xml')
+@age_gender.route('/')
+def index():
+    return render_template('detection.html')
 
-while True:
-    ret,frame=video.read()
-    faces=faceDetect.detectMultiScale(frame, 1.3, 5)
-    for x,y,w,h in faces:
-        x1,y1=x+w, y+h
-        cv2.rectangle(frame, (x,y), (x+w, y+h), (255,0,255), 1)
-        cv2.line(frame, (x,y), (x+30, y),(255,0,255), 6) #Top Left
-        cv2.line(frame, (x,y), (x, y+30),(255,0,255), 6)
+def gen(camera):
+    while True:
+        frame=camera.get_frame()
+        yield(b'--frame\r\n'
+       b'Content-Type:  image/jpeg\r\n\r\n' + frame +
+         b'\r\n\r\n')
 
-        cv2.line(frame, (x1,y), (x1-30, y),(255,0,255), 6) #Top Right
-        cv2.line(frame, (x1,y), (x1, y+30),(255,0,255), 6)
+@age_gender.route('/video')
 
-        cv2.line(frame, (x,y1), (x+30, y1),(255,0,255), 6) #Bottom Left
-        cv2.line(frame, (x,y1), (x, y1-30),(255,0,255), 6)
+def video():
+    return Response(gen(Video()),
+    mimetype='multipart/x-mixed-replace; boundary=frame')
 
-        cv2.line(frame, (x1,y1), (x1-30, y1),(255,0,255), 6) #Bottom right
-        cv2.line(frame, (x1,y1), (x1, y1-30),(255,0,255), 6)
-
-    cv2.imshow("Frame", frame)
-    k=cv2.waitKey(1)
-    if k==ord('q'):
-        break
-video.release()
-cv2.destroyAllWindows()
+age_gender.run(debug=True,port=5002)
