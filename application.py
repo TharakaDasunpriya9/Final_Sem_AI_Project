@@ -3,7 +3,6 @@ import joblib
 import  numpy as np
 import pickle
 from camera import Video
-from subprocess import call
 from age_gender import application
 
 @application.route("/")
